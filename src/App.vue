@@ -156,7 +156,11 @@
                     v-model="project.fundAmount"
                   ></v-text-field>
                   
-                
+                  <v-textarea
+                        label="Description"
+                        persistent-hint
+                        v-model="project.fundDesc">
+                   </v-textarea>
                   
                   <v-btn
                     class="mt-3"
