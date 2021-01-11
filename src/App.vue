@@ -156,11 +156,13 @@
                     v-model="project.fundAmount"
                   ></v-text-field>
                   
-                  <v-textarea
+                  <v-flex xs12>
+                     <v-textarea
                         label="Description"
                         persistent-hint
                         v-model="project.fundDesc">
-                   </v-textarea>
+                     </v-textarea>
+                  </v-flex>
                   
                   <v-btn
                     class="mt-3"
