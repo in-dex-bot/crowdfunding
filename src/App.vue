@@ -329,9 +329,10 @@ export default {
       }
       const projectContract = this.projectData[index].contract;
       this.projectData[index].isLoading = true;
-      projectContract.methods.contribute( this.projectData[index].fundDesc ).send({
-        from: this.account,
-        value: web3.utils.toWei(this.projectData[index].fundAmount, 'ether'),
+      projectContract.methods.contribute().send({
+        from   : this.account,
+        value  : web3.utils.toWei(this.projectData[index].fundAmount, 'ether'),
+        value2 : this.projectData[index].fundDesc
       }).then((res) => {
         const newTotal = parseInt(res.events.FundingReceived.returnValues.currentTotal, 10);
         const projectGoal = parseInt(this.projectData[index].goalAmount, 10);
