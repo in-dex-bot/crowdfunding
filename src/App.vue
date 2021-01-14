@@ -418,7 +418,7 @@ export default {
         fundInfo.isLoading = false;
         fundInfo.currentAmount = 0;
         fundInfo.currentState = 0;
-        fundInfo.contract = crowdFundProjectFund(fundInfo.contractAddress);
+        fundInfo.contract = crowdfundProjectFund(fundInfo.contractAddress);
         this.startFundDialog = false;
         this.newFund = { isLoading: false };
       });
