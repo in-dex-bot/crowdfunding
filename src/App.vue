@@ -325,6 +325,7 @@
 // We import our the scripts for the smart contract instantiation, and web3
 import crowdfundInstance from '../contracts/crowdfundInstance';
 import crowdfundProject from '../contracts/crowdfundProjectInstance';
+import crowdfundProjectFund from '../contracts/crowdfundProjectFundInstance';
 import web3 from '../contracts/web3';
 export default {
   name: 'App',
@@ -406,7 +407,7 @@ export default {
     
     startFund() {
       this.newFund.isLoading = true;
-      crowdfundProjectInstance.methods.startFund(  // porque startFund es un método de la instancia project
+      crowdfundProject.methods.startFund(  // porque startFund es un método de la instancia project
         this.newFund.desc,
         web3.utils.toWei(this.newFund.amountToFund, 'ether'),
       ).send({
@@ -416,7 +417,7 @@ export default {
         fundInfo.isLoading = false;
         fundInfo.currentAmount = 0;
         fundInfo.currentState = 0;
-        fundInfo.contract = projectFund(fundInfo.contractAddress);
+        fundInfo.contract = crowdFundProjectFund(fundInfo.contractAddress);
         this.startFundDialog = false;
         this.newFund = { isLoading: false };
       });
