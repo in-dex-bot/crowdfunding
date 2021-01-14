@@ -199,6 +199,65 @@
                 </v-card-actions>
               </v-card>
             </v-hover>
+            
+            
+            // Fund contract new modal:
+            
+            <v-layout row justify-center>
+          <v-dialog v-model="startFundDialog" max-width="600px" persistent>
+            <v-btn slot="activator" color="primary" dark>Aporte a este proyecto</v-btn>
+            <v-card>
+              <v-card-title>
+                <span class="headline font-weight-bold mt-2 ml-4">Fund</span>
+              </v-card-title>
+              <v-card-text class="pt-0">
+                <v-container class="pt-0" grid-list-md>
+                  <v-layout wrap>
+ 
+                    <v-flex xs12>
+                      <v-textarea
+                        label="Descripción"
+                        persistent-hint
+                        v-model="newFund.descriptionF">
+                      </v-textarea>
+                    </v-flex>
+                    
+                    <v-flex xs12 sm6>
+                      <v-text-field
+                        label="Cantidad requerida (ETH)"
+                        type="number"
+                        step="0.0001"
+                        min="0"
+                        v-model="newFund.amountGoalF">
+                      </v-text-field>
+                    </v-flex>
+
+                  </v-layout>
+                </v-container>
+              </v-card-text>
+              <v-card-actions>
+                <v-spacer></v-spacer>
+                <v-btn
+                  color="blue darken-1"
+                  flat
+                  @click="startFundDialog = false;
+                  newFund.isLoading = false;">
+                  Cerrar
+                </v-btn>
+                <v-btn color="blue darken-1"
+                  flat
+                  @click="startFund"
+                  :loading="newFund.isLoading">
+                  Aportar a este proyecto
+                </v-btn>
+              </v-card-actions>
+            </v-card>
+          </v-dialog>
+        </v-layout>
+            
+        // end fund contract new
+            
+            
           </v-flex>
         </v-layout>      
         
@@ -273,6 +332,7 @@ export default {
     return {
       startProjectDialog: false,
       startProjectDialog2: true,
+      startFundDialog: false,
       account: null,
       stateMap: [
         { color: 'primary', text: 'En curso' },
@@ -342,8 +402,26 @@ export default {
           this.projectData[index].currentState = 2;
         }
       });
-      // poner aqui el projectContract.methods.fund().send({ ...
     },
+    
+    startFund() {
+      this.newFund.isLoading = true;
+      projectInstance.methods.startFund(  // porque startFund es un método de la instancia project
+        this.newFund.descriptionF,
+        web3.utils.toWei(this.newFund.amountGoalF, 'ether'),
+      ).send({
+        from: this.account,
+      }).then((res) => {
+        const fundInfo = res.events.FundStarted.returnValues;
+        fundInfo.isLoading = false;
+        fundInfo.currentAmount = 0;
+        fundInfo.currentState = 0;
+        fundInfo.contract = projectFund(fundInfo.contractAddress);
+        this.startFundDialog = false;
+        this.newFund = { isLoading: false };
+      });
+    },
+    
     getRefund(index) {
       this.projectData[index].isLoading = true;
       this.projectData[index].contract.methods.getRefund().send({
