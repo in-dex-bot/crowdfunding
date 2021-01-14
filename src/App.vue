@@ -210,7 +210,7 @@
                       <v-textarea
                         label="Descripción"
                         persistent-hint
-                        v-model="newFund.descriptionF">
+                        v-model="newFund.desc">
                       </v-textarea>
                     </v-flex>
                     
@@ -220,7 +220,7 @@
                         type="number"
                         step="0.0001"
                         min="0"
-                        v-model="newFund.amountGoalF">
+                        v-model="newFund.amountToFund">
                       </v-text-field>
                     </v-flex>
 
@@ -401,8 +401,8 @@ export default {
     startFund() {
       this.newFund.isLoading = true;
       crowdfundProject.methods.startFund(  // porque startFund es un método de la instancia project
-        this.newFund.descriptionF,
-        web3.utils.toWei(this.newFund.amountGoalF, 'ether'),
+        this.newFund.desc,
+        web3.utils.toWei(this.newFund.amountToFund, 'ether'),
       ).send({
         from: this.account,
       }).then((res) => {
