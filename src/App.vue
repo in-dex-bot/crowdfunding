@@ -342,6 +342,7 @@ export default {
       ],
       projectData: [],
       newProject: { isLoading: false },
+      newFund: { isLoading: false },
     };
   },
   mounted() {
