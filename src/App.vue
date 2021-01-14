@@ -406,7 +406,7 @@ export default {
     
     startFund() {
       this.newFund.isLoading = true;
-      projectInstance.methods.startFund(  // porque startFund es un método de la instancia project
+      crowdfundProjectInstance.methods.startFund(  // porque startFund es un método de la instancia project
         this.newFund.desc,
         web3.utils.toWei(this.newFund.amountToFund, 'ether'),
       ).send({
