@@ -155,15 +155,7 @@
                     min="0"
                     v-model="project.fundAmount"
                   ></v-text-field>
-                  
-                  <v-flex xs12>
-                     <v-textarea
-                        label="Description"
-                        persistent-hint
-                        v-model="project.fundDesc">
-                     </v-textarea>
-                  </v-flex>
-                  
+                                  
                   <v-btn
                     class="mt-3"
                     color="light-blue darken-1 white--text"
