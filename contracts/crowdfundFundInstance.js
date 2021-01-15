@@ -75,6 +75,36 @@ const abi = [
 	{
 		"constant": true,
 		"inputs": [],
+		"name": "getDetailsF",
+		"outputs": [
+			{
+				"name": "fundStarter",
+				"type": "address"
+			},
+			{
+				"name": "fundDesc",
+				"type": "string"
+			},
+			{
+				"name": "currentStateF",
+				"type": "uint8"
+			},
+			{
+				"name": "currentAmountF",
+				"type": "uint256"
+			},
+			{
+				"name": "goalAmountF",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [],
 		"name": "currentBalanceF",
 		"outputs": [
 			{
