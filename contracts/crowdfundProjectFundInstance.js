@@ -143,7 +143,10 @@ const abi = [
 	}
 ];
 
-export default (address) => {
+/* export default (address) => {
   const instance = new web3.eth.Contract(abi, address);
   return instance;
-};
+}; */
+
+const instance = new web3.eth.Contract(abi, '0x32e10ac339226531791d807bff7c7ebbaaf8cd66');
+export default instance;
