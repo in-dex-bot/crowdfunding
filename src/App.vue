@@ -85,18 +85,14 @@
         
       </v-container>
 
-      <v-container
-        grid-list-lg
-      >
-        <h2 class="" style="margin-top: -75px;">
-          Proyectos en curso
-        </h2>
+      <v-container grid-list-lg>
+      
+        <h2 class="" style="margin-top: -75px;"> Proyectos en curso </h2>
+        
         <v-layout row wrap>
           <v-flex v-for="(project, index) in projectData" :key="index" xs12>
-            <v-dialog
-              v-model="project.dialog"
-              width="800"
-            >
+          
+            <v-dialog v-model="project.dialog" width="800" >
               <v-card>
                 <v-card-title class="headline font-weight-bold">
                   {{ project.projectTitle }}
@@ -116,6 +112,22 @@
                 </v-card-actions>
               </v-card>
             </v-dialog>
+            
+            <v-layout row wrap>
+               <v-flex v-for="(fund, index) in fundData" :key="index" xs12>
+                  <v-dialog v-model="fund.dialog" width="800" >
+                    <v-card>
+                       <v-card-title class="headline font-weight-bold">
+                           {{ fund.fundDesc }}
+                       </v-card-title>
+                       <v-card-text>
+                           {{ fund.fundStarter }}
+                       </v-card-text>
+                    </v-card>
+                  </v-dialog>
+               </v-flex>
+             </v-layout>
+            
             <v-hover>
               <v-card
                 slot-scope="{ hover }"
@@ -145,6 +157,7 @@
                     <small v-if="project.currentState == 2">has been achieved</small>
                   </div>
                 </v-card-title>
+                
                 <v-flex
                   v-if="project.currentState == 0 && account != project.projectStarter"
                   class="d-flex ml-3" xs12 sm6 md3>
@@ -165,6 +178,7 @@
                     Donar
                   </v-btn>
                 </v-flex>
+                
                 <v-flex class="d-flex ml-3" xs12 sm6 md3>
                   <v-btn
                     class="mt-3"
@@ -176,6 +190,7 @@
                     Obtener reembolso (en ETH)
                   </v-btn>
                 </v-flex>
+                
                 <v-card-actions v-if="project.currentState == 0" class="text-xs-center">
                   <span class="font-weight-bold" style="width: 200px;">
                     {{ project.currentAmount / 10**18 }} ETH
@@ -189,23 +204,23 @@
                     {{ project.goalAmount / 10**18 }} ETH
                   </span>
                 </v-card-actions>
+                
               </v-card>
             </v-hover>
+       
             
-            
-            // Fund contract new modal:
-            
-            <v-layout row justify-center>
+          <v-layout row justify-center>
           <v-dialog v-model="startFundDialog" max-width="600px" persistent>
             <v-btn slot="activator" color="primary" dark>Aporte a este proyecto</v-btn>
             <v-card>
+            
               <v-card-title>
                 <span class="headline font-weight-bold mt-2 ml-4">Fund</span>
               </v-card-title>
+              
               <v-card-text class="pt-0">
                 <v-container class="pt-0" grid-list-md>
                   <v-layout wrap>
- 
                     <v-flex xs12>
                       <v-textarea
                         label="Descripción"
@@ -213,7 +228,6 @@
                         v-model="newFund.desc">
                       </v-textarea>
                     </v-flex>
-                    
                     <v-flex xs12 sm6>
                       <v-text-field
                         label="Cantidad requerida (ETH)"
@@ -223,10 +237,10 @@
                         v-model="newFund.amountToFund">
                       </v-text-field>
                     </v-flex>
-
                   </v-layout>
                 </v-container>
               </v-card-text>
+              
               <v-card-actions>
                 <v-spacer></v-spacer>
                 <v-btn
@@ -243,11 +257,10 @@
                   Aportar a este proyecto
                 </v-btn>
               </v-card-actions>
+              
             </v-card>
           </v-dialog>
         </v-layout>
-            
-        // end fund contract new
             
             
           </v-flex>
@@ -333,6 +346,7 @@ export default {
         { color: 'success', text: 'Completed' },
       ],
       projectData: [],
+      fundData: [],
       newProject: { isLoading: false },
       newFund: { isLoading: false },
     };
@@ -413,6 +427,20 @@ export default {
         fundInfo.contract = crowdfundFund(fundInfo.contractAddress);
         this.startFundDialog = false;
         this.newFund = { isLoading: false };
+      });
+    },
+    
+    getFunds() {
+      crowdfundInstance.methods.returnAllFunds().call().then((funds) => {
+        funds.forEach((fundAddress) => {
+          const fundInst = crowdfundFund(fundAddress);
+          fundInst.methods.getDetailsF().call().then((fundData) => {
+            const fundInfo = fundData;
+            fundInfo.isLoading = false;
+            fundInfo.contract = fundInst;
+            this.fundData.push(fundInfo);
+          });
+        });
       });
     },
     
