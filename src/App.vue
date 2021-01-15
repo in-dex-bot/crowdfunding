@@ -356,6 +356,7 @@ export default {
     web3.eth.getAccounts().then((accounts) => {
       [this.account] = accounts;
       this.getProjects();
+      this.getFunds();
     });
   },
   methods: {
