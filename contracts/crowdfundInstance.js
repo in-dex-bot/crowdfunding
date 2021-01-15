@@ -44,6 +44,24 @@ const abi = [
 		"type": "function"
 	},
 	{
+		"constant": false,
+		"inputs": [
+			{
+				"name": "desc",
+				"type": "string"
+			},
+			{
+				"name": "amountToFund",
+				"type": "uint256"
+			}
+		],
+		"name": "startFund",
+		"outputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
 		"anonymous": false,
 		"inputs": [
 			{
@@ -78,6 +96,33 @@ const abi = [
 			}
 		],
 		"name": "ProjectStarted",
+		"type": "event"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": false,
+				"name": "fundcontractAddress",
+				"type": "address"
+			},
+			{
+				"indexed": false,
+				"name": "fundStarter",
+				"type": "address"
+			},
+			{
+				"indexed": false,
+				"name": "fundDesc",
+				"type": "string"
+			},
+			{
+				"indexed": false,
+				"name": "fundAmount",
+				"type": "uint256"
+			}
+		],
+		"name": "FundStarted",
 		"type": "event"
 	}
 ];
