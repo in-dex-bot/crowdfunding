@@ -272,7 +272,8 @@ export default {
 
         const projectContract = this.projectData[index].contract;
         this.projectData[index].isLoading = true;
-        projectContract.methods.contribute().send({
+        const val = "textoo";
+        projectContract.methods.contribute(val).send({
           from: this.account,
           value: web3.utils.toWei(this.projectData[index].fundAmount, 'ether'),
         }).then((res) => {
