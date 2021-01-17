@@ -92,6 +92,7 @@
         <v-layout row wrap>
         
           <v-flex v-for="(fund, index) in fundData" :key="index" xs12>
+            
             <v-dialog v-model="fund.dialog" width="800" >
                 <v-card>
                   <v-card-title class="headline font-weight-bold">
@@ -101,8 +102,37 @@
                     {{ fund.fundDesc }}
                   </v-card-text>
                 </v-card>
-              </v-dialog>           
+            </v-dialog>
+            
+            <v-hover>
+              <v-card
+                slot-scope="{ hover }"
+                :class="`elevation-${hover ? 10 : 2}`"
+              >
+                <v-card-title primary-title>
+                  <div>
+                    <div class="headline font-weight-bold">
+                      <v-chip
+                        label
+                        :color="stateMap[fund.currentStateF].color"
+                        text-color="white" class="mt-0">
+                      {{ stateMap[fund.currentStateF].text }}
+                      </v-chip>
+                      {{ fund.fundDesc }}
+                    </div>
+                    <br/>
+                    <span>{{ fund.fundDesc.substring(0, 100) }}</span>
+                    <span v-if="fund.fundDesc.length > 100">
+                      ... <a @click="fundData[index].dialog = true">[Show full]</a>
+                    </span>
+                  </div>
+                </v-card-title>
+                
+              </v-card>
+            </v-hover>
+            
           </v-flex>
+          
           
           <v-flex v-for="(project, index) in projectData" :key="index" xs12>
           
