@@ -90,6 +90,20 @@
         <h2 class="" style="margin-top: -75px;"> Proyectos en curso </h2>
         
         <v-layout row wrap>
+        
+          <v-flex v-for="(fund, index) in fundData" :key="index" xs12>
+            <v-dialog v-model="fund.dialog" width="800" >
+                <v-card>
+                  <v-card-title class="headline font-weight-bold">
+                    {{ fund.fundDesc }}
+                  </v-card-title>
+                  <v-card-text>
+                    {{ fund.fundDesc }}
+                  </v-card-text>
+                </v-card>
+              </v-dialog>           
+          </v-flex>
+          
           <v-flex v-for="(project, index) in projectData" :key="index" xs12>
           
             <v-dialog v-model="project.dialog" width="800" >
@@ -173,8 +187,7 @@
                     :loading="project.isLoading"
                   >
                     Obtener reembolso (en ETH)
-                  </v-btn>
-                                    
+                  </v-btn>                            
                 </v-flex>
                 
                 <v-card-actions v-if="project.currentState == 0" class="text-xs-center">
