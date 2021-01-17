@@ -174,13 +174,7 @@
                   >
                     Obtener reembolso (en ETH)
                   </v-btn>
-                  
-                  <v-flex v-for="(fund, index) in fundData" :key="index" xs12>
-                     <v-card-title primary-title>
-                     {{ fund.fundDesc }}
-                     </v-card>
-                  </v-flex>
-                  
+                                    
                 </v-flex>
                 
                 <v-card-actions v-if="project.currentState == 0" class="text-xs-center">
