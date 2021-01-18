@@ -119,10 +119,11 @@
                       {{ stateMap[fund.currentStateF].text }}
                       </v-chip>
                       {{ fund.fundDesc }}
-                      {{ fund.fundStarter }}
                     </div>
                     <br/>
                     <span>{{ fund.fundDesc.substring(0, 100) }}</span>
+                    <span>Cuenta origen aporte: {{ fund.fundStarter }} </span>
+                    <span><b>Aporte: </b> {{ fund.goalAmountF }} ETH</span>
                     <span v-if="fund.fundDesc.length > 100">
                       ... <a @click="fundData[index].dialog = true">[Show full]</a>
                     </span>
