@@ -424,7 +424,7 @@ export default {
         projectInfo.currentAmount = 0;
         projectInfo.currentState = 0;
         projectInfo.contract = crowdfundProject(projectInfo.contractAddress);
-        console.log(projectInfo.contract);
+        console.log(projectInfo.contract._address);
         this.startProjectDialog = false;
         this.newProject = { isLoading: false };
       });
