@@ -119,6 +119,7 @@
                       {{ stateMap[fund.currentStateF].text }}
                       </v-chip>
                       {{ fund.fundDesc }}
+                      {{ fund.fundStarter }}
                     </div>
                     <br/>
                     <span>{{ fund.fundDesc.substring(0, 100) }}</span>
