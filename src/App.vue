@@ -134,7 +134,7 @@
                       {{ project.projectTitle }}
                     </div>
                     <br/>
-                     <span>{{ project.contractAddress }}</span>
+                     <span> asdasd </span>
                     <br/>
                     <span>{{ project.projectDesc.substring(0, 100) }}</span>
                     <span v-if="project.projectDesc.length > 100">
