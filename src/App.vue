@@ -134,6 +134,8 @@
                       {{ project.projectTitle }}
                     </div>
                     <br/>
+                    {{ project.contractAddress }}
+                    <br/>
                     <span>{{ project.projectDesc.substring(0, 100) }}</span>
                     <span v-if="project.projectDesc.length > 100">
                       ... <a @click="projectData[index].dialog = true">[Show full]</a>
