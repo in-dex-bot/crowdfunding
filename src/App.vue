@@ -134,7 +134,7 @@
                       {{ project.projectTitle }}
                     </div>
                     <br/>
-                     <span><b>Cuenta que crea el proyecto:</b> {{ project.projectStarter }} {{ project.contractAddress }}</span>
+                     <span><b>Cuenta que crea el proyecto:</b> {{ project.projectStarter }} {{ project }}</span>
                     <br/>
                     <span>{{ project.projectDesc.substring(0, 100) }}</span>
                     <span v-if="project.projectDesc.length > 100">
