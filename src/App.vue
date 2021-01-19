@@ -134,7 +134,7 @@
                       {{ project.projectTitle }}
                     </div>
                     <br/>
-                     <span> asdasd </span>
+                     <span> {{ project.projectStarter }} </span>
                     <br/>
                     <span>{{ project.projectDesc.substring(0, 100) }}</span>
                     <span v-if="project.projectDesc.length > 100">
