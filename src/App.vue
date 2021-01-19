@@ -137,7 +137,7 @@
                               step="0.0001"
                               min="0"
                               v-model="newFund.amountToFund"
-                              placeholder="{{ project.contract._address }}">
+                              placeholder="{ project.contract._address }">
                             </v-text-field>
                           </v-flex>
                           <v-flex xs12>
