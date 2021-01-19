@@ -204,7 +204,8 @@
                   <v-btn slot="activator" color="primary" dark>Aporte a este proyecto</v-btn>
                   <v-card>
                     <v-card-title>
-                      <span class="headline font-weight-bold mt-2 ml-4">Aporte al contrato {{ project.contract._address }} </span>
+                      <span class="headline font-weight-bold mt-2 ml-4">Aporte al contrato </span>
+                      <span>  {{ project.contract._address }} </span>
                     </v-card-title>
                     <v-card-text class="pt-0">
                       <v-container class="pt-0" grid-list-md>
