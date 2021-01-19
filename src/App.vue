@@ -125,11 +125,21 @@
                   <v-card>
                     <v-card-title>
                       <span class="headline font-weight-bold mt-2 ml-4">Aporte al contrato </span>
-                      <span>  {{ project.contract._address }} </span>
+                      <span>   </span>
                     </v-card-title>
                     <v-card-text class="pt-0">
                       <v-container class="pt-0" grid-list-md>
                         <v-layout wrap>
+                          <v-flex xs12 sm6>
+                            <v-text-field
+                              label="Contrato"
+                              type=""
+                              step="0.0001"
+                              min="0"
+                              v-model="newFund.amountToFund"
+                              value="{{ project.contract._address }}">
+                            </v-text-field>
+                          </v-flex>
                           <v-flex xs12>
                             <v-textarea
                               label="Descripción"
