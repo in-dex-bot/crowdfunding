@@ -133,11 +133,9 @@
                           <v-flex xs12 sm6>
                             <v-text-field
                               label="Contrato"
-                              type=""
                               step="0.0001"
                               min="0"
-                              v-model="newFund.amountToFund"
-                              placeholder="{ project.contract._address }">
+                              v-model="newFund.contractToFund">
                             </v-text-field>
                           </v-flex>
                           <v-flex xs12>
@@ -465,6 +463,7 @@ export default {
     startFund() {
       this.newFund.isLoading = true;
       crowdfundInstance.methods.startFund(  // porque startFund es un método de la instancia crowdfunding
+        this.newFund.contractToFund,
         this.newFund.desc,
         web3.utils.toWei(this.newFund.amountToFund, 'ether'),
       ).send({
