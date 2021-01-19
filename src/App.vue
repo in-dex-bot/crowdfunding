@@ -137,7 +137,7 @@
                               step="0.0001"
                               min="0"
                               v-model="newFund.amountToFund"
-                              value="{{ project.contract._address }}">
+                              value={{ project.contract._address }}>
                             </v-text-field>
                           </v-flex>
                           <v-flex xs12>
