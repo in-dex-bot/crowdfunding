@@ -245,10 +245,10 @@
                 
            <v-layout row justify-center>
              <v-dialog v-model="startFundDialog" max-width="600px" persistent>
-                <v-btn slot="activator" color="primary" dark>Aporte a este proyecto {{ project.contract._address }} </v-btn>
+                <v-btn slot="activator" color="primary" dark>Aporte a este proyecto</v-btn>
                 <v-card>
                   <v-card-title>
-                    <span class="headline font-weight-bold mt-2 ml-4">Fund</span>
+                    <span class="headline font-weight-bold mt-2 ml-4">Aporte al contrato {{ project.contract._address }} </span>
                   </v-card-title>
                   <v-card-text class="pt-0">
                     <v-container class="pt-0" grid-list-md>
@@ -290,68 +290,12 @@
                   </v-card-actions>               
                 </v-card>
               </v-dialog>
-            </v-layout>
-                
-                
+            </v-layout>                             
                 
                 
               </v-card>
             </v-hover>
        
-            
-          <v-layout row justify-center>
-          <v-dialog v-model="startFundDialog" max-width="600px" persistent>
-            <v-btn slot="activator" color="primary" dark>Aporte a este proyecto</v-btn>
-            <v-card>
-            
-              <v-card-title>
-                <span class="headline font-weight-bold mt-2 ml-4">Fund</span>
-              </v-card-title>
-              
-              <v-card-text class="pt-0">
-                <v-container class="pt-0" grid-list-md>
-                  <v-layout wrap>
-                    <v-flex xs12>
-                      <v-textarea
-                        label="Descripción"
-                        persistent-hint
-                        v-model="newFund.desc">
-                      </v-textarea>
-                    </v-flex>
-                    <v-flex xs12 sm6>
-                      <v-text-field
-                        label="Cantidad requerida (ETH)"
-                        type="number"
-                        step="0.0001"
-                        min="0"
-                        v-model="newFund.amountToFund">
-                      </v-text-field>
-                    </v-flex>
-                  </v-layout>
-                </v-container>
-              </v-card-text>
-              
-              <v-card-actions>
-                <v-spacer></v-spacer>
-                <v-btn
-                  color="blue darken-1"
-                  flat
-                  @click="startFundDialog = false;
-                  newFund.isLoading = false;">
-                  Cerrar
-                </v-btn>
-                <v-btn color="blue darken-1"
-                  flat
-                  @click="startFund"
-                  :loading="newFund.isLoading">
-                  Aportar a este proyecto
-                </v-btn>
-              </v-card-actions>
-              
-            </v-card>
-          </v-dialog>
-        </v-layout>
-            
             
           </v-flex>
         </v-layout>      
