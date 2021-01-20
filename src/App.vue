@@ -87,7 +87,7 @@
 
       <v-container grid-list-lg>
         <hr/>
-        <h2 class="" style="margin-top: -75px;"> PROYECTOS EN CURSO </h2>
+        <h2 class="" style="margin-top: -30px;"> PROYECTOS EN CURSO </h2>
         
         <v-layout row wrap>
         
