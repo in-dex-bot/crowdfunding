@@ -135,7 +135,8 @@
                               label="Contrato"
                               step="0.0001"
                               min="0"
-                              v-model="newFund.contractToFund">
+                              v-model="newFund.contractToFund"
+                              value="project.contract._address">
                             </v-text-field>
                           </v-flex>
                           <v-flex xs12>
