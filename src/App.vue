@@ -86,13 +86,11 @@
       </v-container>
 
       <v-container grid-list-lg>
-      
-        <h2 class="" style="margin-top: -75px;"> Proyectos en curso </h2>
+        <hr/>
+        <h2 class="" style="margin-top: -75px;"> PROYECTOS EN CURSO </h2>
         
         <v-layout row wrap>
         
-          
-          
           
           <v-flex v-for="(project, index) in projectData" :key="index" xs12>
           
