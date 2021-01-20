@@ -274,7 +274,7 @@
                   </v-card-text>
                 </v-card>
             </v-dialog>
-            <v-hover>
+            <v-hover v-if="fund.fundContractToFund == project.contract._address">
               <v-card
                 slot-scope="{ hover }"
                 :class="`elevation-${hover ? 10 : 2}`"
@@ -293,7 +293,7 @@
                     <br/>
                     <span><b>Descripción:</b>{{ fund.fundDesc.substring(0, 100) }}</span><br>
                     <span><b>Cuenta origen:</b> {{ fund.fundStarter }} </span><br>
-                    <span v-if="fund.fundContractToFund == project.contract._address"><b>Contrato recibe aporte:</b> {{ fund.fundContractToFund }} </span><br>
+                    <span><b>Contrato recibe aporte:</b> {{ fund.fundContractToFund }} </span><br>
                     <span><b>Aporte: </b> {{ fund.goalAmountF }} ETH</span>
                     <span v-if="fund.fundDesc.length > 100">
                       ... <a @click="fundData[index].dialog = true">[Show full]</a>
