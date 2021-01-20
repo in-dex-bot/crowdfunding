@@ -12,54 +12,13 @@ const abi = [
 		"type": "function"
 	},
 	{
-		"anonymous": false,
-		"inputs": [
-			{
-				"indexed": false,
-				"name": "contributorF",
-				"type": "address"
-			},
-			{
-				"indexed": false,
-				"name": "amountF",
-				"type": "uint256"
-			},
-			{
-				"indexed": false,
-				"name": "currentTotalF",
-				"type": "uint256"
-			}
-		],
-		"name": "FundingReceivedF",
-		"type": "event"
-	},
-	{
-		"inputs": [
-			{
-				"name": "fundStarter",
-				"type": "address"
-			},
-			{
-				"name": "fundDesc",
-				"type": "string"
-			},
-			{
-				"name": "fundAmount",
-				"type": "uint256"
-			}
-		],
-		"payable": false,
-		"stateMutability": "nonpayable",
-		"type": "constructor"
-	},
-	{
 		"constant": true,
 		"inputs": [],
-		"name": "amountGoalF",
+		"name": "contractF",
 		"outputs": [
 			{
 				"name": "",
-				"type": "uint256"
+				"type": "string"
 			}
 		],
 		"payable": false,
@@ -102,20 +61,6 @@ const abi = [
 	{
 		"constant": true,
 		"inputs": [],
-		"name": "currentBalanceF",
-		"outputs": [
-			{
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"payable": false,
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"constant": true,
-		"inputs": [],
 		"name": "descriptionF",
 		"outputs": [
 			{
@@ -130,11 +75,29 @@ const abi = [
 	{
 		"constant": true,
 		"inputs": [],
+		"name": "amountGoalF",
+		"outputs": [
+			{
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [],
 		"name": "getDetailsF",
 		"outputs": [
 			{
 				"name": "fundStarter",
 				"type": "address"
+			},
+			{
+				"name": "fundContractToFund",
+				"type": "string"
 			},
 			{
 				"name": "fundDesc",
@@ -160,6 +123,20 @@ const abi = [
 	{
 		"constant": true,
 		"inputs": [],
+		"name": "currentBalanceF",
+		"outputs": [
+			{
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [],
 		"name": "stateF",
 		"outputs": [
 			{
@@ -170,6 +147,51 @@ const abi = [
 		"payable": false,
 		"stateMutability": "view",
 		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"name": "fundStarter",
+				"type": "address"
+			},
+			{
+				"name": "fundContractToFund",
+				"type": "string"
+			},
+			{
+				"name": "fundDesc",
+				"type": "string"
+			},
+			{
+				"name": "fundAmount",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "constructor"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": false,
+				"name": "contributorF",
+				"type": "address"
+			},
+			{
+				"indexed": false,
+				"name": "amountF",
+				"type": "uint256"
+			},
+			{
+				"indexed": false,
+				"name": "currentTotalF",
+				"type": "uint256"
+			}
+		],
+		"name": "FundingReceivedF",
+		"type": "event"
 	}
 ];
 
