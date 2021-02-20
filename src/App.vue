@@ -7,15 +7,25 @@
           wrap
         >
           <v-flex mb-4>
-            <h2 class="" style="background: #adff2f69; margin-top: -24px; padding-top: 20px;">
-               EthProxy 🌱 | Latam Crowdfunding 
+            <h2 class="" style="background: #f37834; margin-top: -24px; padding-top: 20px;">
+               Transacciones sobre Ethereum testnet Ropsten
             </h2>
             <hr/>
             <p class="subheading font-weight-regular">
-              Utiliza Ethereum para crowdfunding descentralizado y aprende la dinámica de los criptoactivos<br><br> 
-              Obten una cuenta para tu billetera <a href="https://metamask.io" target="_blank">Metamask (Extension para Chrome o Firefox)</a> y solicita algunos Eths de prueba<br>
-              en <a href="https://faucet.ropsten.be/" target="_blank">faucet.ropsten.be</a> para realizar tu donación o crear tu propio proyecto en la Testnet Ropsten. (puedes
-              obtener un ETH cada 24 horas desde tu Ip) 
+              <b>Generalidades:</b><br>
+              - Todo en Ethereum es una transacción, GET de bloques es gratis, Agregar un bloque cuesta Gas, No es posible modificar o borrar bloques.
+              - Esta aplicación utiliza contratos inteligentes en Solidity para generar bloques sobre el blockchain de Ethereum<br><br> 
+              - Para realizar transacciones en una testnet (Mainnet es la red principal de Ethereum) se requiere una dirección blockchain (= cuenta de banco) y una billetera: 
+                Instalar una en tu navegador<a href="https://metamask.io" target="_blank">Metamask (Extension para Chrome o Firefox)</a> y solicita algunos Eths de prueba<br>
+              en <a href="https://faucet.ropsten.be/" target="_blank">faucet.ropsten.be</a> para crear tu bloque o aportar a un contrato en la Testnet Ropsten. (puedes
+              obtener un ETH de prueba cada 24 horas desde tu Ip).
+              - En <a href="https://defimath.herokuapp.com" target="_blank">Calculadora para ETH</a> puedes calcular los costos de las transacciones.
+              - Para comprar ETH real <a href="https://www.buda.com" target="_blank">Banco digital de criptoactivos</a> de una compañia llamada surBTC basada en Chile
+                (activa en Chile, Perú, Argentina y Colombia).
+              - Para revisar las transacciones directamente en la cadena de bloques está 
+                <a href="https://ropsten.etherscan.io/address/0x8cfac34881d1cefc125e87eab1cd95d6ca3fd789">
+                https://ropsten.etherscan.io/address/0x8cfac34881d1cefc125e87eab1cd95d6ca3fd789
+                </a>
             </p>
           </v-flex>
         </v-layout>
