@@ -322,7 +322,7 @@
         </v-layout> 
         
         <v-layout row justify-left style="background: #d3f59f">
-          <v-dialog v-model="startProjectDialog2" max-width="600px" persistent>
+          <v-dialog v-model="startProjectDialog2" max-width="1000px" persistent>
             <v-btn slot="activator" color="blue darken-1" dark>Generalidades</v-btn>                     
             <v-card>
               <v-card-title>
@@ -333,20 +333,20 @@
                   <v-layout wrap>
                   
                    <p class="subheading font-weight-regular">
-                    <b>Generalidades:</b><br>
-                    - Todo en Ethereum es una transacción, GET de bloques es gratis, Agregar un bloque cuesta Gas, No es posible modificar o borrar bloques.<br>
+                    - Todo en Ethereum es una transacción, GET de bloques es gratis, Agregar un bloque cuesta Gas, No es posible modificar o borrar bloques.<br><br>
                     - Esta aplicación utiliza contratos inteligentes en Solidity para generar bloques sobre el blockchain de Ethereum<br><br> 
                     - Para realizar transacciones en una testnet (Mainnet es la red principal de Ethereum) se requiere una dirección blockchain (= cuenta de banco) y una billetera: 
-                      Instalar una en tu navegador<a href="https://metamask.io" target="_blank">Metamask (Extension para Chrome o Firefox)</a> y solicita algunos Eths de prueba<br>
-                    en <a href="https://faucet.ropsten.be/" target="_blank">faucet.ropsten.be</a> para crear tu bloque o aportar a un contrato en la Testnet Ropsten. (puedes
-                    obtener un ETH de prueba cada 24 horas desde tu Ip).<br>
+                      Instalar una en tu navegador<a href="https://metamask.io" target="_blank">Metamask (Extension para Chrome o Firefox)</a> y solicita algunos Eths de prueba<br><br>
+                    en <a href="https://faucet.ropsten.be/" target="_blank">faucet.ropsten.be</a> para crear tu bloque o aportar a un contrato en la Testnet Ropsten. 
+                    (Se puede obtener un ETH de prueba cada 24 horas desde la Ip del navegador).<br><br>
                     - En <a href="https://defimath.herokuapp.com" target="_blank">Calculadora para ETH</a> puedes calcular los costos de las transacciones.<br>
                     - Para comprar ETH real <a href="https://www.buda.com" target="_blank">Banco digital de criptoactivos</a> de una compañia llamada surBTC basada en Chile
-                      (activa en Chile, Perú, Argentina y Colombia).<br>
+                      (activa en Chile, Perú, Argentina y Colombia).<br><br>
                     - Para revisar las transacciones directamente en la cadena de bloques está 
-                      <a href="https://ropsten.etherscan.io/address/0x8cfac34881d1cefc125e87eab1cd95d6ca3fd789">
+                      <a href="https://ropsten.etherscan.io/address/0x15d88d19b7aab3fcbf9e721fd64f9de14c98c61b">
                       https://ropsten.etherscan.io/address/0x15d88D19b7aAB3Fcbf9e721Fd64f9de14C98c61B 
-                      </a> (Este es el contrato contenedor generado en el deploy y al cual se agregan los demás bloques)
+                      </a> (Este es el contrato contenedor generado en el deploy y al cual se agregan los demás bloques)<br><br>
+                    - <a href="https://gobiernodigital.mintic.gov.co/692/articles-161810_Ley_2052_2020.pdf" target="_blank">Guía adopción de proyectos sobre Blockchain para Colombia</a>
                   </p>
             
                   </v-layout>
