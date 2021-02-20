@@ -309,12 +309,7 @@
           wrap
         >
           <v-flex mb-4>                       
-            <p class="subheading font-weight-regular">
-             - La cuenta que crea un nuevo bloque no puede financiar su propio proyecto, es por este motivo que al momento de agregar tu bloque 
-             no puedes agreagar una Txn al mismo.<br>
-             - Las transacciones a través de tu billetera en Metamask las puedes realizar en la red Ropsten (TestNet) lo que significa
-             que estas no tienen incidencia en la red productiva de Ethereum (MainNet).
-            </p>
+            <p class="subheading font-weight-regular"><hr/></p>
             <p>
              <a href="https://defimath.herokuapp.com" target="_blank">Calcúla el costo de las transacciones en Ethereum</a>
             </p>
