@@ -329,7 +329,7 @@
                   
                    <p class="subheading font-weight-regular">
                     - Todo en Ethereum es una transacción, GET de bloques es gratis, Agregar un bloque cuesta Gas, No es posible modificar o borrar bloques.<br><br>
-                    - Esta aplicación utiliza contratos inteligentes en Solidity para generar bloques sobre el blockchain de Ethereum<br><br> 
+                    - Esta Dapp (Aplicación descentralizada i.e. sin base de datos) utiliza contratos inteligentes en Solidity para generar bloques sobre el blockchain de Ethereum<br><br> 
                     - Para realizar transacciones en una testnet (Mainnet es la red principal de Ethereum) se requiere una dirección blockchain (semejante a una cuenta de banco) y una billetera: 
                       Instalar una en tu navegador<a href="https://metamask.io" target="_blank">Metamask (Extension para Chrome o Firefox)</a> y solicita algunos Eths de prueba
                       en <a href="https://faucet.ropsten.be/" target="_blank">faucet.ropsten.be</a> para crear tu bloque o aportar a un contrato en la Testnet Ropsten. 
