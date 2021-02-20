@@ -112,10 +112,10 @@
             
             <v-layout row justify-center>
                <v-dialog v-model="startFundDialog" max-width="600px" persistent>
-                  <v-btn slot="activator" color="primary" dark>Aporte a este proyecto</v-btn>
+                  <v-btn slot="activator" color="primary" dark>Generar una Txn sobre este contrato</v-btn>
                   <v-card>
                     <v-card-title>
-                      <span class="headline font-weight-bold mt-2 ml-4">Aporte al contrato </span>
+                      <span class="headline font-weight-bold mt-2 ml-4">Aportar al contrato </span>
                       <span>   </span>
                     </v-card-title>
                     <v-card-text class="pt-0">
@@ -334,7 +334,7 @@
                       Instalar una en tu navegador<a href="https://metamask.io" target="_blank">Metamask (Extension para Chrome o Firefox)</a> y solicita algunos Eths de prueba<br><br>
                     en <a href="https://faucet.ropsten.be/" target="_blank">faucet.ropsten.be</a> para crear tu bloque o aportar a un contrato en la Testnet Ropsten. 
                     (Se puede obtener un ETH de prueba cada 24 horas desde la Ip del navegador).<br><br>
-                    - En <a href="https://defimath.herokuapp.com" target="_blank">Calculadora para ETH</a> puedes calcular los costos de las transacciones.<br>
+                    - En <a href="https://defimath.herokuapp.com" target="_blank">Calculadora para ETH</a> puedes calcular los costos de las transacciones.<br><br>
                     - Para comprar ETH real <a href="https://www.buda.com" target="_blank">Banco digital de criptoactivos</a> de una compañia llamada surBTC basada en Chile
                       (activa en Chile, Perú, Argentina y Colombia).<br><br>
                     - Para revisar las transacciones directamente en la cadena de bloques está 
