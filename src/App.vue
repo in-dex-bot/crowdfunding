@@ -10,32 +10,15 @@
             <h2 class="" style="background: #f37834; margin-top: -24px; padding-top: 20px;">
                Transacciones sobre Ethereum testnet Ropsten
             </h2>
-            <hr/>
-            <p class="subheading font-weight-regular">
-              <b>Generalidades:</b><br>
-              - Todo en Ethereum es una transacción, GET de bloques es gratis, Agregar un bloque cuesta Gas, No es posible modificar o borrar bloques.
-              - Esta aplicación utiliza contratos inteligentes en Solidity para generar bloques sobre el blockchain de Ethereum<br><br> 
-              - Para realizar transacciones en una testnet (Mainnet es la red principal de Ethereum) se requiere una dirección blockchain (= cuenta de banco) y una billetera: 
-                Instalar una en tu navegador<a href="https://metamask.io" target="_blank">Metamask (Extension para Chrome o Firefox)</a> y solicita algunos Eths de prueba<br>
-              en <a href="https://faucet.ropsten.be/" target="_blank">faucet.ropsten.be</a> para crear tu bloque o aportar a un contrato en la Testnet Ropsten. (puedes
-              obtener un ETH de prueba cada 24 horas desde tu Ip).
-              - En <a href="https://defimath.herokuapp.com" target="_blank">Calculadora para ETH</a> puedes calcular los costos de las transacciones.
-              - Para comprar ETH real <a href="https://www.buda.com" target="_blank">Banco digital de criptoactivos</a> de una compañia llamada surBTC basada en Chile
-                (activa en Chile, Perú, Argentina y Colombia).
-              - Para revisar las transacciones directamente en la cadena de bloques está 
-                <a href="https://ropsten.etherscan.io/address/0x8cfac34881d1cefc125e87eab1cd95d6ca3fd789">
-                https://ropsten.etherscan.io/address/0x8cfac34881d1cefc125e87eab1cd95d6ca3fd789
-                </a>
-            </p>
           </v-flex>
         </v-layout>
 
         <v-layout row justify-center>
           <v-dialog v-model="startProjectDialog" max-width="600px" persistent>
-            <v-btn slot="activator" color="primary" dark>Emprende un proyecto</v-btn>
+            <v-btn slot="activator" color="primary" dark>Generar un bloque</v-btn>
             <v-card>
               <v-card-title>
-                <span class="headline font-weight-bold mt-2 ml-4">Emprende tu proyecto</span>
+                <span class="headline font-weight-bold mt-2 ml-4">Genera un nuevo bloque</span>
               </v-card-title>
               <v-card-text class="pt-0">
                 <v-container class="pt-0" grid-list-md>
@@ -86,7 +69,7 @@
                   flat
                   @click="startProject"
                   :loading="newProject.isLoading">
-                  Crear proyecto
+                  Generar un nuevo bloque
                 </v-btn>
               </v-card-actions>
             </v-card>
@@ -97,7 +80,7 @@
 
       <v-container grid-list-lg>
         <hr/>
-        <h2 class="" style="margin-top: -30px;"> PROYECTOS EN CURSO </h2>
+        <h2 class="" style="margin-top: -30px;"> Bloques generados a partir del contrato contenedor <b>0x15d88d19b7aab3fcbf9e721fd64f9de14c98c61b</b> </h2>
         
         <v-layout row wrap>
         
@@ -178,7 +161,7 @@
                         flat
                         @click="startFund"
                         :loading="newFund.isLoading">
-                        Aportar a este proyecto
+                        Aportar a este item
                       </v-btn>
                     </v-card-actions>               
                   </v-card>
@@ -240,7 +223,7 @@
                     @click="fundProject(index)"
                     :loading="project.isLoading"
                   >
-                    Donar
+                    Pagar
                   </v-btn>
                 </v-flex>
                 
@@ -327,38 +310,44 @@
         >
           <v-flex mb-4>                       
             <p class="subheading font-weight-regular">
-             - Los emprendedores no pueden financiar su propio proyecto, es por este motivo que al momento de crear tu proyecto 
-             no puedes donar ETH al mismo.<br>
+             - La cuenta que crea un nuevo bloque no puede financiar su propio proyecto, es por este motivo que al momento de agregar tu bloque 
+             no puedes agreagar una Txn al mismo.<br>
              - Las transacciones a través de tu billetera en Metamask las puedes realizar en la red Ropsten (TestNet) lo que significa
              que estas no tienen incidencia en la red productiva de Ethereum (MainNet).
             </p>
             <p>
              <a href="https://defimath.herokuapp.com" target="_blank">Calcúla el costo de las transacciones en Ethereum</a>
-             |
-             <a href="https://ethereum.org/es/" target="_blank">Asesoria personalizada</a>
-             |
-             <a href="https://ethereum.org/es/" target="_blank">Aprende más sobre Ethereum y arquitecturas web descentralizadas</a>
             </p>
           </v-flex>
         </v-layout> 
         
         <v-layout row justify-left style="background: #d3f59f">
           <v-dialog v-model="startProjectDialog2" max-width="600px" persistent>
-            <v-btn slot="activator" color="blue darken-1" dark>Motivación 😀🌱🥳 </v-btn>                     
+            <v-btn slot="activator" color="blue darken-1" dark>Generalidades</v-btn>                     
             <v-card>
               <v-card-title>
-                <span class="headline font-weight-bold mt-2 ml-4">¿Por qué una aplicación de crowdfunding para Latinoamerica? </span>
+                <span class="headline font-weight-bold mt-2 ml-4">Generalidades</span>
               </v-card-title>
               <v-card-text class="pt-0">
                 <v-container class="pt-0" grid-list-md>
                   <v-layout wrap>
                   
-            Las grandes ideas necesitan esfuerzo y financiación. Puede solicitar donaciones o inversores, pero los donantes, por supuesto, preferirían donar a proyectos en los que tienen algún tipo de certeza de que el proyecto realmente va a alguna parte.
-            Aquí es donde entra en juego el crowdfunding, una configuración ideal en la que puede especificar su objetivo y una fecha límite para alcanzarlo. Si no cumple con su objetivo, las donaciones se devuelven, lo que reduce el riesgo para los donantes.
-            Las plataformas existentes son todas geniales, pero en cada proyecto completado o en cada donación enviada, la plataforma toma un cierto porcentaje (margen) que podría, en ocasiones, ser demasiado alto para los emprendedores. 
-            Es más, dependemos en gran medida de ellos como la tercera parte que nos conecta con los donantes. Si fracasan ellos, también nosotros estaremos en problemas.
-            Con una configuración descentralizada, podemos tener una plataforma que no requiere de confianza entre las partes (en lo que se basa el sistema financiero tradicional), por lo tanto, las únicas tarifas que todos pagarán son solo las tarifas del gas
-            <br/><br/><a href="https://defimath.herokuapp.com" target="_blank">Aprende más sobre Ethereum y arquitecturas web descentralizadas</a>
+                   <p class="subheading font-weight-regular">
+                    <b>Generalidades:</b><br>
+                    - Todo en Ethereum es una transacción, GET de bloques es gratis, Agregar un bloque cuesta Gas, No es posible modificar o borrar bloques.<br>
+                    - Esta aplicación utiliza contratos inteligentes en Solidity para generar bloques sobre el blockchain de Ethereum<br><br> 
+                    - Para realizar transacciones en una testnet (Mainnet es la red principal de Ethereum) se requiere una dirección blockchain (= cuenta de banco) y una billetera: 
+                      Instalar una en tu navegador<a href="https://metamask.io" target="_blank">Metamask (Extension para Chrome o Firefox)</a> y solicita algunos Eths de prueba<br>
+                    en <a href="https://faucet.ropsten.be/" target="_blank">faucet.ropsten.be</a> para crear tu bloque o aportar a un contrato en la Testnet Ropsten. (puedes
+                    obtener un ETH de prueba cada 24 horas desde tu Ip).<br>
+                    - En <a href="https://defimath.herokuapp.com" target="_blank">Calculadora para ETH</a> puedes calcular los costos de las transacciones.<br>
+                    - Para comprar ETH real <a href="https://www.buda.com" target="_blank">Banco digital de criptoactivos</a> de una compañia llamada surBTC basada en Chile
+                      (activa en Chile, Perú, Argentina y Colombia).<br>
+                    - Para revisar las transacciones directamente en la cadena de bloques está 
+                      <a href="https://ropsten.etherscan.io/address/0x8cfac34881d1cefc125e87eab1cd95d6ca3fd789">
+                      https://ropsten.etherscan.io/address/0x15d88D19b7aAB3Fcbf9e721Fd64f9de14C98c61B 
+                      </a> (Este es el contrato contenedor generado en el deploy y al cual se agregan los demás bloques)
+                  </p>
             
                   </v-layout>
                 </v-container>
