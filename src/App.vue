@@ -7,7 +7,7 @@
           wrap
         >
           <v-flex mb-4>
-            <h2 class="" style="background: #f37834; margin-top: -24px; padding-top: 20px;">
+            <h2 class="" style=" margin-top: -24px; padding-top: 20px;">
                Transacciones sobre Ethereum testnet Ropsten
             </h2>
           </v-flex>
@@ -316,7 +316,7 @@
           </v-flex>
         </v-layout> 
         
-        <v-layout row justify-left style="background: #d3f59f">
+        <v-layout row justify-left>
           <v-dialog v-model="startProjectDialog2" max-width="1000px" persistent>
             <v-btn slot="activator" color="blue darken-1" dark>Generalidades</v-btn>                     
             <v-card>
